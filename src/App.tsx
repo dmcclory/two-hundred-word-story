@@ -3,7 +3,7 @@ import './App.css'
 import {tokenize, buildState, totalWords, partition, totalUniqueWords } from './Cool'
 
 const helper = (input: string) => buildState(tokenize(input))
-const starterText = "Write a story! Make it 200 words long, but here's the catch: you can only use 50 words. This writing exercise is from A Swim In The Lake in the Rain by George Saunders, you should read his description of it, if you're curious."
+const starterText = "Write a story! Make it 200 words long, but here's the catch: you can only use 50 words. This writing exercise is from A Swim In The Lake in the Rain by George Saunders, you should read his description of it, if you're curious. \n\nDelete this to get started!"
 
 // numbers sort first .. a wierd bug
 // probably can "alphabetize them based on the first number"
@@ -44,9 +44,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Two Hundred Word Story</h1>
+      </header>
         <div className="Main">
           <div className="TextArea">
-            Total: {total}
+            Total: {total} words
             <textarea defaultValue={storyText} onChange={formChange}>
             </textarea>
           </div>
@@ -57,7 +59,6 @@ function App() {
             </div>
           </div>
         </div>
-      </header>
     </div>
   )
 }

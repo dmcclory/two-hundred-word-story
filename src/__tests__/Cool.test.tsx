@@ -77,6 +77,7 @@ describe('partition', () => {
 
 
 // maybe make it so we ignore plurals??
+// bug: newline doesn't count as whitespace
 
 describe('totalWords', () => {
   const text = "The long story told to a man who wore a hat"

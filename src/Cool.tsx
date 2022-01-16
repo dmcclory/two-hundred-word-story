@@ -47,6 +47,19 @@ const skipList = [
   'after',
   'since',
   'over',
+  // pronouns
+  'he',
+  'she',
+  'we',
+  'you',
+  'they',
+  'it',
+  'my',
+  'our',
+  'your',
+  'his',
+  'hers',
+  'their',
 ]
 
 export const totalWords = (wordMap: WordMap, skipFrequentWords = false) => {
