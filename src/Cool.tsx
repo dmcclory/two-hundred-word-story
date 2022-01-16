@@ -1,6 +1,6 @@
 
 export const tokenize = (text: string) => {
-  let res = text.replace(/\p{Punctuation}+/gu, '').split(' ').map(t => t.toLocaleLowerCase()).filter(t => t.length > 0)
+  let res = text.replace(/\p{Punctuation}+/gu, '').split(/\p{Separator}|\s/gu).map(t => t.toLocaleLowerCase()).filter(t => t.length > 0)
   return res
 }
 

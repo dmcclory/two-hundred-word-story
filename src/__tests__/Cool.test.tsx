@@ -10,6 +10,15 @@ describe('tokenize', () => {
     expect(result.length).toEqual(4)
   })
 
+  it('splits tokens when there is any whitespace', () => {
+    let input = `this is
+    a story
+    `
+    const result = tokenize(input)
+    console.log('res', result)
+    expect(result.length).toEqual(4)
+  })
+
   it('downcases them', () => {
     let input = ('This is a story')
     const result = tokenize(input)

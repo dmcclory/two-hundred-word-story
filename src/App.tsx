@@ -20,7 +20,10 @@ function App() {
     const lastChar = text[text.length -1]
 
     setStoryText(text)
-    if (lastChar && lastChar.match(/ |\p{Punctuation}/u)) {
+    if (
+      (lastChar && lastChar.match(/\p{Separator}|\s|\p{Punctuation}/u))
+      || text === ''
+    ) {
       setWords(helper(text))
     }
   }, [])
