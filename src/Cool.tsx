@@ -95,3 +95,10 @@ export const partition = (words: string[], rows=20, columns=3) => {
 
   return res
 }
+
+export const sortWords = (wordMap: WordMap) => {
+  const res = []
+  const cool = Object.values(wordMap).sort((a, b) => a.firstOccurrence < b.firstOccurrence ? -1 : 1)
+
+  return cool.map(e => e.word)
+}

@@ -1,6 +1,6 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import './App.css'
-import {tokenize, buildState, totalWords, partition, totalUniqueWords } from './Cool'
+import {tokenize, buildState, totalWords, partition, totalUniqueWords, sortWords } from './Cool'
 
 const helper = (input: string) => buildState(tokenize(input))
 const starterText = "Write a story! Make it 200 words long, but here's the catch: you can only use 50 words. This writing exercise is from A Swim In The Lake in the Rain by George Saunders, you should read his description of it, if you're curious. \n\nDelete this to get started!"
@@ -28,7 +28,11 @@ function App() {
     }
   }, [])
 
-  const columns = partition(Object.keys(words), 20, 3).map((c,i) =>
+  const wordList = useMemo(() => (
+    sortWords(words)
+  ), [words])
+
+  const columns = partition(wordList, 20, 3).map((c,i) =>
     <div className="column" key={i}>
       {c.map((w, j) => (
         <div
