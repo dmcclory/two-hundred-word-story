@@ -34,14 +34,18 @@ function App() {
 
   const columns = partition(wordList, 20, 3).map((c,i) =>
     <div className="column" key={i}>
-      {c.map((w, j) => (
-        <div
-          className="entry"
-          key={`${w}-${i}-${j}`}
-        >
-          {i*20 + j + 1}: {w}
-        </div>
-      ))}
+      {c.map((w, j) => {
+        const listIndex = i*20 + j + 1
+        return (
+          <div
+            className="entry"
+            style={listIndex > 50 && !w ? { display: 'none' } : {}}
+            key={`${w}-${i}-${j}`}
+          >
+            {i*20 + j + 1}: {w}
+          </div>
+        )
+      })}
     </div>
   )
 
