@@ -59,6 +59,9 @@ function App() {
             </div>
           </div>
         </div>
+      <footer>
+        By the way: we don't save <i>anything</i> so if you write a little story you like ... make sure to save it!
+      </footer>
     </div>
   )
 }
