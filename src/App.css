@@ -1,0 +1,53 @@
+.App-header {
+  background-color: #cebbdd;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.Main {
+  max-width: 1500px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 48px;
+}
+
+.TextArea {
+  /* background-color: #eaeaea; */
+  font-family: serif;
+}
+
+.TextArea > textarea {
+  background-color: #eaeaea;
+  border: none;
+  font-family: serif;
+  font-size: 24px;
+  resize: none;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.TextArea > textarea:focus {
+  outline: none;
+}
+
+/* .WordList { */
+/* } */
+
+.WordList--main {
+  background-color: #eaeaea;
+  font-size: 18px;
+  width: 600px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 24px;
+}
+
+.WordList .column {
+  max-width: 150px;
+}
